@@ -29,7 +29,7 @@ public class OAuth2ClientController {
         this.restTemplate = new RestTemplate();
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String index(OAuth2AuthenticationToken authenticationToken) {
         OAuth2AuthorizedClient oAuth2AuthorizedClient = this.authorizedClientService.loadAuthorizedClient(authenticationToken.getAuthorizedClientRegistrationId(), authenticationToken.getName());
         OAuth2AccessToken oAuth2AccessToken = oAuth2AuthorizedClient.getAccessToken();
